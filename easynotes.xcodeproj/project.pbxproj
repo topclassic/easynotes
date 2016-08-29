@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF065B7FC5A42335946C0D33 /* Pods_easynotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508CE0E87A7D93CB2CC27E00 /* Pods_easynotes.framework */; };
 		EEF070221D74825400604879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF070211D74825400604879 /* AppDelegate.swift */; };
 		EEF070241D74825400604879 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF070231D74825400604879 /* ViewController.swift */; };
 		EEF070271D74825400604879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF070251D74825400604879 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		508CE0E87A7D93CB2CC27E00 /* Pods_easynotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_easynotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		561148709AF5EB864D222B2A /* Pods-easynotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easynotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-easynotes/Pods-easynotes.debug.xcconfig"; sourceTree = "<group>"; };
+		DE19D3EEF9F32D3E5286AFEE /* Pods-easynotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easynotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-easynotes/Pods-easynotes.release.xcconfig"; sourceTree = "<group>"; };
 		EEF0701E1D74825400604879 /* easynotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = easynotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF070211D74825400604879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEF070231D74825400604879 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF065B7FC5A42335946C0D33 /* Pods_easynotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79B2CE24A956B386BBB1CC1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				561148709AF5EB864D222B2A /* Pods-easynotes.debug.xcconfig */,
+				DE19D3EEF9F32D3E5286AFEE /* Pods-easynotes.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9C01FD21B73717A0CF6B42CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				508CE0E87A7D93CB2CC27E00 /* Pods_easynotes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EEF070151D74825400604879 = {
 			isa = PBXGroup;
 			children = (
 				EEF070201D74825400604879 /* easynotes */,
 				EEF0701F1D74825400604879 /* Products */,
+				79B2CE24A956B386BBB1CC1A /* Pods */,
+				9C01FD21B73717A0CF6B42CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEF070301D74825400604879 /* Build configuration list for PBXNativeTarget "easynotes" */;
 			buildPhases = (
+				F4EA791B51A4E94394D0422F /* [CP] Check Pods Manifest.lock */,
 				EEF0701A1D74825400604879 /* Sources */,
 				EEF0701B1D74825400604879 /* Frameworks */,
 				EEF0701C1D74825400604879 /* Resources */,
+				CA00A62F40E6433433728ED7 /* [CP] Embed Pods Frameworks */,
+				237542C23478F2719AE1A013 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		237542C23478F2719AE1A013 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-easynotes/Pods-easynotes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA00A62F40E6433433728ED7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-easynotes/Pods-easynotes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4EA791B51A4E94394D0422F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EEF0701A1D74825400604879 /* Sources */ = {
@@ -247,6 +322,7 @@
 		};
 		EEF070311D74825400604879 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 561148709AF5EB864D222B2A /* Pods-easynotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = easynotes/Info.plist;
@@ -259,6 +335,7 @@
 		};
 		EEF070321D74825400604879 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE19D3EEF9F32D3E5286AFEE /* Pods-easynotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = easynotes/Info.plist;
@@ -288,6 +365,7 @@
 				EEF070321D74825400604879 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
