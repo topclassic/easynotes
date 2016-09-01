@@ -11,9 +11,24 @@ import RealmSwift
 import GoogleAnalytics
 class NoteTableViewController: UITableViewController {
     
-    @IBAction func unwindForSegue(segue: UIStoryboardSegue) {
+    @IBAction func unwindToSegue(segue: UIStoryboardSegue){
         if let id = segue.identifier{
-            print("ID\(id)")
+            do{
+                let realm = try Realm()
+                switch id {
+                case "save":
+                    //จับว่า Controller ต้นทางเป็นใคร เพื่อให้เราสามารถเข้าถึงตัวแปร currentNote ในหน้า NewNote จากหน้า NoteTableController นี้ได
+                    let source = segue.sourceViewController as! NewNoteController
+                    try realm.write(){
+                        realm.add(source.currentNote!)
+                    }
+              
+                default: print("Identifier \(id)")
+                }
+                notes = realm.objects(Note).sorted("date", ascending: false) //เรียงข้อมูลที่แสดงจากวันที่ล่สุด
+            }catch{
+                print("handle error")
+            }
         }
     }
     //สำหรับเก็บขอมูลแต่ละ note
@@ -33,6 +48,33 @@ class NoteTableViewController: UITableViewController {
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return notes.count
+    }
+    
+    //ทำงานเมื่อมีการเลือก cell ใน TableView
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath){
+
+        //selectedNote = notes[indexPath.row]
+        //self.performSegueWithIdentifier("show", sender: self)
+    }
+    //กำหนดว่า TableView สามารถแก้ไขได้หรอไม่
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool{
+        return true
+    }
+    //ลบข้อมูลใน realm และ cell นั้นๆออกไป เมื่อ user ปาดนิ้วแล้วเลือก DELETE (แถบ delete เป็น default สำหรับการเขียนแบบนี้)
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle,forRowAtIndexPath indexPath:NSIndexPath){
+        
+        if editingStyle == .Delete{
+            let note = notes[indexPath.row] as Object
+            do{
+                let realm = try Realm()
+                try realm.write(){
+                    realm.delete(note)
+                }
+                notes = realm.objects(Note).sorted("date", ascending: false)
+            }catch{
+                print("handle error")
+            }
+        }
     }
 
     override func viewDidLoad() {

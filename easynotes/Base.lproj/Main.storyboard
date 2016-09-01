@@ -74,7 +74,7 @@
                     <navigationItem key="navigationItem" title="Note" id="jGw-rP-Z8g">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="aA8-Cu-S6a">
                             <connections>
-                                <segue destination="Ear-bL-jqa" kind="unwind" unwindAction="unwindForSegue:" id="9Gs-Rf-gCd"/>
+                                <segue destination="Ear-bL-jqa" kind="unwind" identifier="save" unwindAction="unwindToSegue:" id="wbS-ge-w9q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

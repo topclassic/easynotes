@@ -9,5 +9,11 @@
 import UIKit
 
 class NewNoteController: UIViewController {
-
+     var currentNote: Note?
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        currentNote = Note()
+        currentNote?.title = "1111"
+        currentNote?.detail = "2222"
+    }
 }
