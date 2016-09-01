@@ -7,7 +7,20 @@
 //
 
 import UIKit
-
+import RealmSwift
 class NoteDisplayController: UIViewController {
+    @IBOutlet var titletextfield: UITextField!
+    @IBOutlet var titletextview: UITextView!
     
+    var updatenote: Note?{
+        didSet{
+            displaynote(updatenote)
+        }
+    }
+    func  displaynote(note: Note?){
+        if let updatenote = updatenote, titletextfield = titletextfield, titletextview = titletextview{
+            titletextfield.text = updatenote.title
+            titletextview.text = updatenote.detail
+        }
+    }
 }

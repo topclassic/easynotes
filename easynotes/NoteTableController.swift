@@ -28,6 +28,8 @@ class NoteTableViewController: UITableViewController {
                     try realm.write(){
                         realm.delete(self.selectNote!)
                     }
+                    let source = segue.sourceViewController as! NoteDisplayController
+                    source.updatenote = nil
               
                 default: print("Identifier \(id)")
                 }

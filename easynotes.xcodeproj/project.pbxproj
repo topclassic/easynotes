@@ -68,7 +68,6 @@
 		EEAA47281D77F7C900EFA891 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EEAA47291D77F85D00EFA891 /* NoteTableViewCell.swift */,
 				EE27DA0D1D780A3E00E0FAAA /* Note.swift */,
 			);
 			name = Models;
@@ -97,6 +96,7 @@
 			children = (
 				EEAA47281D77F7C900EFA891 /* Models */,
 				EEF070211D74825400604879 /* AppDelegate.swift */,
+				EEAA47291D77F85D00EFA891 /* NoteTableViewCell.swift */,
 				EEF070231D74825400604879 /* NoteTableController.swift */,
 				EEF070251D74825400604879 /* Main.storyboard */,
 				EEF070281D74825400604879 /* Assets.xcassets */,
