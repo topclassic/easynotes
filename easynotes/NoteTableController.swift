@@ -11,6 +11,11 @@ import RealmSwift
 import GoogleAnalytics
 class NoteTableViewController: UITableViewController {
     
+    @IBAction func unwindForSegue(segue: UIStoryboardSegue) {
+        if let id = segue.identifier{
+            print("ID\(id)")
+        }
+    }
     //สำหรับเก็บขอมูลแต่ละ note
     var notes: Results<Note>!{
         didSet{

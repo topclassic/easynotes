@@ -45,12 +45,45 @@
                             <outlet property="delegate" destination="vub-Ri-vZh" id="nuo-d3-kCP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Home" id="0vV-2R-hoQ"/>
+                    <navigationItem key="navigationItem" title="List" id="0vV-2R-hoQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="O6v-Eu-dZk">
+                            <connections>
+                                <segue destination="QSr-e1-1Yq" kind="show" identifier="add" id="WQt-rY-oci"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7F4-Y5-mFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="566.5" y="237.5"/>
+        </scene>
+        <!--NewNoteController-->
+        <scene sceneID="ZA5-VT-S17">
+            <objects>
+                <viewController title="NewNoteController" id="QSr-e1-1Yq" customClass="NewNoteController" customModule="easynotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qLU-GI-UuV"/>
+                        <viewControllerLayoutGuide type="bottom" id="8kG-NO-Isr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q7O-bt-6K6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Note" id="jGw-rP-Z8g">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="aA8-Cu-S6a">
+                            <connections>
+                                <segue destination="Ear-bL-jqa" kind="unwind" unwindAction="unwindForSegue:" id="9Gs-Rf-gCd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzq-vd-djX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ear-bL-jqa" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1013.5" y="237.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hdX-6d-OC2">

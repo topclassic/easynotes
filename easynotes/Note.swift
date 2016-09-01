@@ -14,6 +14,5 @@ class Note: Object{
     dynamic var title: String = ""
     dynamic var detail: String = ""
     dynamic var date = NSDate()
-    dynamic var image = UIImage()
     
 }
