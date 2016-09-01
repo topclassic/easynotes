@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF065B7FC5A42335946C0D33 /* Pods_easynotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508CE0E87A7D93CB2CC27E00 /* Pods_easynotes.framework */; };
+		EE27DA0E1D780A3E00E0FAAA /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE27DA0D1D780A3E00E0FAAA /* Note.swift */; };
 		EEAA472A1D77F85D00EFA891 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA47291D77F85D00EFA891 /* NoteTableViewCell.swift */; };
 		EEF070221D74825400604879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF070211D74825400604879 /* AppDelegate.swift */; };
 		EEF070241D74825400604879 /* NoteTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF070231D74825400604879 /* NoteTableController.swift */; };
@@ -20,6 +21,7 @@
 		508CE0E87A7D93CB2CC27E00 /* Pods_easynotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_easynotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561148709AF5EB864D222B2A /* Pods-easynotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easynotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-easynotes/Pods-easynotes.debug.xcconfig"; sourceTree = "<group>"; };
 		DE19D3EEF9F32D3E5286AFEE /* Pods-easynotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easynotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-easynotes/Pods-easynotes.release.xcconfig"; sourceTree = "<group>"; };
+		EE27DA0D1D780A3E00E0FAAA /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		EEAA47291D77F85D00EFA891 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		EEF0701E1D74825400604879 /* easynotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = easynotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF070211D74825400604879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAA47291D77F85D00EFA891 /* NoteTableViewCell.swift */,
+				EE27DA0D1D780A3E00E0FAAA /* Note.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				EEF070241D74825400604879 /* NoteTableController.swift in Sources */,
 				EEF070221D74825400604879 /* AppDelegate.swift in Sources */,
 				EEAA472A1D77F85D00EFA891 /* NoteTableViewCell.swift in Sources */,
+				EE27DA0E1D780A3E00E0FAAA /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
