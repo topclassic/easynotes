@@ -87,15 +87,24 @@ class NoteTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
+    }
+    //ส่งข้อมูลจากหน้า NoteTable ไปยัง NoteDisplay
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "show"){
+            let noteViewController = segue.destinationViewController as! NoteDisplayController
+            noteViewController.updatenote = selectNote
+        }
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         do{
             let realm = try Realm()
             notes = realm.objects(Note).sorted("date", ascending: false)
         }catch{
             print("handle error")
         }
-    
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

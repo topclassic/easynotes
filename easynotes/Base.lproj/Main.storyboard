@@ -65,7 +65,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="J5L-jZ-WRh" kind="show" identifier="show" id="m4V-lR-svz"/>
+                        <segue destination="IQg-fX-QdN" kind="show" identifier="show" id="JW9-7r-AVK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7F4-Y5-mFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -83,7 +83,21 @@
                     <view key="view" contentMode="scaleToFill" id="q7O-bt-6K6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aho-lO-JVb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="IQg-fX-QdN" kind="embed" identifier="shownewnote" id="lt8-KZ-OEo"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Aho-lO-JVb" firstAttribute="leading" secondItem="q7O-bt-6K6" secondAttribute="leading" id="0d8-7n-rsE"/>
+                            <constraint firstItem="Aho-lO-JVb" firstAttribute="top" secondItem="q7O-bt-6K6" secondAttribute="top" id="PDb-zj-N8Q"/>
+                            <constraint firstItem="Aho-lO-JVb" firstAttribute="bottom" secondItem="8kG-NO-Isr" secondAttribute="top" id="gl4-iY-YB6"/>
+                            <constraint firstAttribute="trailing" secondItem="Aho-lO-JVb" secondAttribute="trailing" id="iFE-mY-JxF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Note" id="jGw-rP-Z8g">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="aA8-Cu-S6a">
@@ -97,7 +111,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qzq-vd-djX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ear-bL-jqa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1035.5" y="261.5"/>
+            <point key="canvasLocation" x="1056.5" y="469.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hdX-6d-OC2">
@@ -117,58 +131,67 @@
             <point key="canvasLocation" x="14" y="238"/>
         </scene>
         <!--Note Display Controller-->
-        <scene sceneID="jYx-nO-Owl">
+        <scene sceneID="NSl-5b-EvN">
             <objects>
-                <viewController id="J5L-jZ-WRh" customClass="NoteDisplayController" customModule="easynotes" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Pnh-Ox-VT6">
+                <viewController id="IQg-fX-QdN" customClass="NoteDisplayController" customModule="easynotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kLV-z4-X8O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="zhX-SE-8QJ">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="YwS-fp-KYA"/>
-                                    <barButtonItem systemItem="trash" id="Y35-Pa-6Ge">
-                                        <connections>
-                                            <segue destination="thr-a9-x4u" kind="unwind" identifier="delete" unwindAction="unwindToSegue:" id="BA4-HD-LSP"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USX-0h-hcI">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Te-E4-6hR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2a-pv-sL0">
-                                        <rect key="frame" x="8" y="70" width="359" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FRB-Vu-2ZR">
-                                        <rect key="frame" x="8" y="108" width="359" height="507"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WBZ-dk-M4o">
+                                        <rect key="frame" x="8" y="8" width="359" height="607"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="WBZ-dk-M4o" firstAttribute="centerX" secondItem="4Te-E4-6hR" secondAttribute="centerX" id="CoE-xx-Jfd"/>
+                                    <constraint firstItem="WBZ-dk-M4o" firstAttribute="bottom" secondItem="4Te-E4-6hR" secondAttribute="bottomMargin" id="UcM-f9-nkU"/>
+                                    <constraint firstItem="WBZ-dk-M4o" firstAttribute="leading" secondItem="4Te-E4-6hR" secondAttribute="leadingMargin" id="WI6-p9-sjV"/>
+                                    <constraint firstItem="WBZ-dk-M4o" firstAttribute="centerY" secondItem="4Te-E4-6hR" secondAttribute="centerY" id="XFy-xg-O12"/>
+                                    <constraint firstItem="WBZ-dk-M4o" firstAttribute="trailing" secondItem="4Te-E4-6hR" secondAttribute="trailingMargin" id="e7R-wK-hKh"/>
+                                    <constraint firstItem="WBZ-dk-M4o" firstAttribute="top" secondItem="4Te-E4-6hR" secondAttribute="topMargin" id="hPQ-fs-zdK"/>
+                                </constraints>
                             </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="yqH-0m-6gn">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Fn6-eg-QV1"/>
+                                    <barButtonItem systemItem="trash" id="LN5-9h-lKz">
+                                        <connections>
+                                            <segue destination="2UU-Ar-Nvx" kind="unwind" identifier="delete" unwindAction="unwindToSegue:" id="LXs-eA-1j3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="zhX-SE-8QJ" secondAttribute="bottom" id="2GA-8o-FUy"/>
-                            <constraint firstItem="zhX-SE-8QJ" firstAttribute="leading" secondItem="Pnh-Ox-VT6" secondAttribute="leading" id="On2-kI-pam"/>
-                            <constraint firstAttribute="trailing" secondItem="zhX-SE-8QJ" secondAttribute="trailing" id="Ugl-UI-TTg"/>
+                            <constraint firstItem="4Te-E4-6hR" firstAttribute="top" secondItem="kLV-z4-X8O" secondAttribute="top" id="Psn-9m-3ap"/>
+                            <constraint firstItem="4Te-E4-6hR" firstAttribute="leading" secondItem="yqH-0m-6gn" secondAttribute="leading" id="R9O-Vi-mh0"/>
+                            <constraint firstItem="4Te-E4-6hR" firstAttribute="leading" secondItem="kLV-z4-X8O" secondAttribute="leading" id="Sz2-cu-x48"/>
+                            <constraint firstItem="4Te-E4-6hR" firstAttribute="trailing" secondItem="yqH-0m-6gn" secondAttribute="trailing" id="aha-M8-7MS"/>
+                            <constraint firstAttribute="bottom" secondItem="yqH-0m-6gn" secondAttribute="bottom" id="ciY-FG-waV"/>
+                            <constraint firstItem="yqH-0m-6gn" firstAttribute="top" secondItem="4Te-E4-6hR" secondAttribute="bottom" id="vrx-Oq-pMK"/>
+                            <constraint firstAttribute="trailing" secondItem="4Te-E4-6hR" secondAttribute="trailing" id="xvl-iV-FLg"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="titletextfield" destination="u2a-pv-sL0" id="QSD-bI-5lR"/>
-                        <outlet property="titletextview" destination="FRB-Vu-2ZR" id="wra-CR-Bd9"/>
+                        <outlet property="titletextview" destination="WBZ-dk-M4o" id="xQ2-gO-ILE"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZO5-tc-OnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="thr-a9-x4u" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KN5-Db-P7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2UU-Ar-Nvx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1495.5" y="213.5"/>
+            <point key="canvasLocation" x="1547.5" y="229.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="lt8-KZ-OEo"/>
+    </inferredMetricsTieBreakers>
 </document>

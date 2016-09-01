@@ -11,9 +11,12 @@ import UIKit
 class NewNoteController: UIViewController {
      var currentNote: Note?
     
+    //สร้าง note ว่างขณะกด add เพื่อรองรับข้อมูลจากหน้า notedisplay
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        currentNote = Note()
-        currentNote?.title = "1111"
-        currentNote?.detail = "2222"
+        if(segue.identifier == "shownewnote"){
+            currentNote = Note()
+            let notecontroller = segue.destinationViewController as! NoteDisplayController
+            notecontroller.updatenote = currentNote
+        }
     }
 }
