@@ -13,50 +13,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" rowHeight="81" id="ezQ-nM-V2k" customClass="NoteTableViewCell" customModule="easynotes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="81"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ezQ-nM-V2k" id="J4l-3a-vFi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-OR-Yf1">
-                                            <rect key="frame" x="42" y="8" width="210" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="210" id="byQ-2K-zf3"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6p2-5c-jrd">
-                                            <rect key="frame" x="42" y="43" width="210" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="6p2-5c-jrd" firstAttribute="top" secondItem="yoh-OR-Yf1" secondAttribute="bottom" constant="14" id="LRi-ZA-Zoo"/>
-                                        <constraint firstItem="yoh-OR-Yf1" firstAttribute="top" secondItem="J4l-3a-vFi" secondAttribute="topMargin" id="TtR-pB-gJd"/>
-                                        <constraint firstItem="yoh-OR-Yf1" firstAttribute="leading" secondItem="6p2-5c-jrd" secondAttribute="leading" id="paF-ZF-G2T"/>
-                                        <constraint firstItem="yoh-OR-Yf1" firstAttribute="trailing" secondItem="6p2-5c-jrd" secondAttribute="trailing" id="qX5-cX-mRz"/>
-                                        <constraint firstItem="yoh-OR-Yf1" firstAttribute="leading" secondItem="J4l-3a-vFi" secondAttribute="leadingMargin" constant="34" id="sDa-RT-Xf9"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="datelabel" destination="6p2-5c-jrd" id="fsb-oB-GHS"/>
-                                    <outlet property="titlelabel" destination="yoh-OR-Yf1" id="zWe-zA-e8O"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="vub-Ri-vZh" id="uJ1-DZ-knY"/>
                             <outlet property="delegate" destination="vub-Ri-vZh" id="nuo-d3-kCP"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="List" id="0vV-2R-hoQ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="coJ-9m-IAy"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="O6v-Eu-dZk">
                             <connections>
                                 <segue destination="QSr-e1-1Yq" kind="show" identifier="add" id="WQt-rY-oci"/>
@@ -134,6 +97,10 @@
         <scene sceneID="NSl-5b-EvN">
             <objects>
                 <viewController id="IQg-fX-QdN" customClass="NoteDisplayController" customModule="easynotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pvM-ja-QGn"/>
+                        <viewControllerLayoutGuide type="bottom" id="pgC-K8-HA6"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kLV-z4-X8O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,6 +159,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lt8-KZ-OEo"/>
+        <segue reference="JW9-7r-AVK"/>
     </inferredMetricsTieBreakers>
 </document>

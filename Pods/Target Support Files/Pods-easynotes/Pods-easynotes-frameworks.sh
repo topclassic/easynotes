@@ -85,9 +85,15 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Realm/Realm.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RealmSearchViewController/RealmSearchViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RealmSwift/RealmSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RealmSwiftBlogData/RealmSwiftBlogData.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TOWebViewController/TOWebViewController.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Realm/Realm.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RealmSearchViewController/RealmSearchViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RealmSwift/RealmSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RealmSwiftBlogData/RealmSwiftBlogData.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TOWebViewController/TOWebViewController.framework"
 fi

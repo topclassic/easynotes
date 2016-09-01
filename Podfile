@@ -7,4 +7,8 @@ target 'easynotes' do
 
   # Pods for easynotes
 	pod 'RealmSwift', '~> 1.0'
+
+	pod 'RealmSearchViewController'
+	pod 'TOWebViewController'
+	pod 'RealmSwiftBlogData'
 end
