@@ -11,6 +11,8 @@ import RealmSwift
 import GoogleAnalytics
 class NoteTableViewController: UITableViewController {
     
+    var selectNote: Note?
+    
     @IBAction func unwindToSegue(segue: UIStoryboardSegue){
         if let id = segue.identifier{
             do{
@@ -21,6 +23,10 @@ class NoteTableViewController: UITableViewController {
                     let source = segue.sourceViewController as! NewNoteController
                     try realm.write(){
                         realm.add(source.currentNote!)
+                    }
+                case "delete":
+                    try realm.write(){
+                        realm.delete(self.selectNote!)
                     }
               
                 default: print("Identifier \(id)")
@@ -52,9 +58,8 @@ class NoteTableViewController: UITableViewController {
     
     //ทำงานเมื่อมีการเลือก cell ใน TableView
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath){
-
-        //selectedNote = notes[indexPath.row]
-        //self.performSegueWithIdentifier("show", sender: self)
+        selectNote = notes[indexPath.row]
+        self.performSegueWithIdentifier("show", sender: self)
     }
     //กำหนดว่า TableView สามารถแก้ไขได้หรอไม่
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool{
@@ -79,19 +84,12 @@ class NoteTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let mynote = Note()
-        mynote.title = "1234"
-        mynote.detail = "hhhhhhhh"
-        
-        //ทำการบันทึก note ลงใน realm
+        tableView.dataSource = self
         do{
             let realm = try Realm()
-            try realm.write(){
-                realm.add(mynote)
-            }
-            notes = realm.objects(Note) //update ตัวแปร notes ให้ข้อมูลตรงกับใน realm
+            notes = realm.objects(Note).sorted("date", ascending: false)
         }catch{
-            print("Handle Error")
+            print("handle error")
         }
     
     }

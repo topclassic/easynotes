@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KYI-dS-nMQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--NoteTableViewController-->
@@ -17,22 +18,32 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="81"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ezQ-nM-V2k" id="J4l-3a-vFi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-OR-Yf1">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-OR-Yf1">
                                             <rect key="frame" x="42" y="8" width="210" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="210" id="byQ-2K-zf3"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6p2-5c-jrd">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6p2-5c-jrd">
                                             <rect key="frame" x="42" y="43" width="210" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6p2-5c-jrd" firstAttribute="top" secondItem="yoh-OR-Yf1" secondAttribute="bottom" constant="14" id="LRi-ZA-Zoo"/>
+                                        <constraint firstItem="yoh-OR-Yf1" firstAttribute="top" secondItem="J4l-3a-vFi" secondAttribute="topMargin" id="TtR-pB-gJd"/>
+                                        <constraint firstItem="yoh-OR-Yf1" firstAttribute="leading" secondItem="6p2-5c-jrd" secondAttribute="leading" id="paF-ZF-G2T"/>
+                                        <constraint firstItem="yoh-OR-Yf1" firstAttribute="trailing" secondItem="6p2-5c-jrd" secondAttribute="trailing" id="qX5-cX-mRz"/>
+                                        <constraint firstItem="yoh-OR-Yf1" firstAttribute="leading" secondItem="J4l-3a-vFi" secondAttribute="leadingMargin" constant="34" id="sDa-RT-Xf9"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="datelabel" destination="6p2-5c-jrd" id="fsb-oB-GHS"/>
@@ -53,6 +64,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="J5L-jZ-WRh" kind="show" identifier="show" id="m4V-lR-svz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7F4-Y5-mFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,7 +97,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qzq-vd-djX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ear-bL-jqa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1013.5" y="237.5"/>
+            <point key="canvasLocation" x="1035.5" y="261.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hdX-6d-OC2">
@@ -101,6 +115,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6X-ww-YQX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="14" y="238"/>
+        </scene>
+        <!--Note Display Controller-->
+        <scene sceneID="jYx-nO-Owl">
+            <objects>
+                <viewController id="J5L-jZ-WRh" customClass="NoteDisplayController" customModule="easynotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pnh-Ox-VT6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="zhX-SE-8QJ">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="YwS-fp-KYA"/>
+                                    <barButtonItem systemItem="trash" id="Y35-Pa-6Ge"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="zhX-SE-8QJ" secondAttribute="bottom" id="2GA-8o-FUy"/>
+                            <constraint firstItem="zhX-SE-8QJ" firstAttribute="leading" secondItem="Pnh-Ox-VT6" secondAttribute="leading" id="On2-kI-pam"/>
+                            <constraint firstAttribute="trailing" secondItem="zhX-SE-8QJ" secondAttribute="trailing" id="Ugl-UI-TTg"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZO5-tc-OnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1504.5" y="237.5"/>
         </scene>
     </scenes>
 </document>
